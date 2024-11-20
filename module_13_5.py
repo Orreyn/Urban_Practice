@@ -23,7 +23,7 @@ async def start(message):
 
 
 @dp.message_handler(text=['Информация'])
-async def set_age(message, state):
+async def info(message, state):
     await message.answer('Информация о боте')
 
 class UserState(StatesGroup):

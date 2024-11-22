@@ -9,7 +9,7 @@ import crud_functions as cf
 
 cf.get_all_products()
 
-api = '8194130444:AAFHRy1dnUFo8obhLt_mdq7FEC7gYsMcxpc'
+api = ''
 lutch = Bot(token=api)
 dp = Dispatcher(lutch, storage=MemoryStorage())
 

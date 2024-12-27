@@ -30,8 +30,12 @@ async def put_user(user_id: Annotated[int, Path(gt=0, le=100, title="User ID",
                                                  description="Enter username")],
                    age: Annotated[int, Path(ge=18, le=120, title="Age",
                                             description="Enter age")]):
-    users[user_id] = f"Имя: {username}, возраст: {age}"
-    return f"The user {user_id} is updated"
+    ids = users.keys()
+    if ids[user_id-1] == user_id:
+        print('Пользователя с таким id нет')
+    else:
+        users[user_id] = f"Имя: {username}, возраст: {age}"
+        return f"The user {user_id} is updated"
 
 
 @app.delete("/user/{user_id}")

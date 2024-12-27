@@ -6,11 +6,6 @@ from pydantic import BaseModel
 app = FastAPI()
 
 
-class User(BaseModel):
-    username: str
-    age: int
-
-
 @app.get("/")
 async def read_root() -> str:
     return "Главная страница"
